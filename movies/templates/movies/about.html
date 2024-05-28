@@ -10,6 +10,8 @@
     <div>
       {% block content %}
         <h1>About Page!!</h1>
+        {% load static %}
+        <img style="width: 100px;" src="{% static 'movies/me.jpg' %}" alt="About Me" />
       {% endblock %}
     </div>
   </body>
