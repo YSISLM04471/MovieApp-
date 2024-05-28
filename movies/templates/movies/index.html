@@ -1,3 +1,4 @@
+{% extends 'movies/_base.html' %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,21 +7,17 @@
     <title>Document</title>
   </head>
   <body>
-    <nav>
-      <div style="display: flex; gap: 10px;">
-        <a href="{% url 'home' %}">home</a>
-        <a href="{% url 'about' %}">about</a>
-      </div>
-    </nav>
-    <h1>My Favourite Movie</h1>
-    {% if movies %}
-      <ul>
-        {% for movie in movies %}
-          <li>{{ movie|title }}</li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <h1>No Movie here</h1>
-    {% endif %}
+    {% block content %}
+      <h1>My Favourite Movie</h1>
+      {% if movies %}
+        <ul>
+          {% for movie in movies %}
+            <li>{{ movie|title }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <h1>No Movie here</h1>
+      {% endif %}
+    {% endblock %}
   </body>
 </html>
